@@ -49,27 +49,7 @@ func main() {
 		}
 	}
 
-			//Accessing values from data.json file 
-	fmt.Println("GUID ", data["message"]["guid"])
-	fmt.Println("status ", data["push_messages"]["provider_message_id"])
-	fmt.Println("bonus_guid",data["bonus_message"]["bonus_guid"])
-	for v := range result{
-		for item := range data[v] {
-			fmt.Println("keys of data : ",item)
-			fmt.Println("Values : ",data[v][item])
-		}
-	}
-
-			//Accessing keys and values from mapping.json file
-	fmt.Println(mapping["mapping"]["guid"])
-	for v := range result_map{
-		for item := range mapping[v] {
-			fmt.Println("keys : ",item)
-			fmt.Println("Values : ",mapping[v][item])
-		}
-	}
-
-			// Taking another map to output keys and values
+			// Taking another map to store keys and values
 	CopiedMap:= make(map[string]interface{})
 	for v := range result_map{
 		for item := range mapping[v] {
@@ -81,94 +61,5 @@ func main() {
 			
 		}
 	}
-
-
-
-			//Spliting 
-	b := (strings.Split(fmt.Sprint((mapping["mapping"]["guid"])),"."))
-	fmt.Println(b[0])
-	fmt.Println(b[1])
-	
-	
-
-	// // We need the keys
-	// // Use make() to create the slice for better performance
-	// Keys_of_message := make([]string, len(message))
-	// Keys_of_bonus_message  := make([]string, len(bonus_message))
-	// // Storing keys of message in to Keys_of_message slice
-	// for key := range message {
-	// 	Keys_of_message = append(Keys_of_message, key)
-	// }
-	// // Storing keys of bonus_message into Keys_of_bonus_message slice
-	// for key := range bonus_message {
-	// 	Keys_of_bonus_message  = append(Keys_of_bonus_message , key)
-	// }
-
-	// // Printing keys
-	// for key := range result {
-	// 	fmt.Println(result[key])
-	// }
-	// 		// push-message
-	// for _,item := range push_message {
-	// 	for key := range item.(map[string]interface{}){
-	// 		fmt.Println(key)
-	// 	}
-	// 	fmt.Println(" ")
-
-	// }
-	// for k2 := range Keys_of_bonus_message  {
-	// 	fmt.Println(Keys_of_bonus_message [k2])
-	// }
-
-	// // Printing values
-	// fmt.Println(
-	// 	"\nGuid :", message["guid"],
-	// 	"\nbonus_guid :", bonus_message["bonus_guid"],
-	// )
-	// for _,item:=range push_message {
-	// 	fmt.Printf("created_at : %v\n", item.(map[string]interface{})["created_at"])
-	// 	fmt.Printf("status : %v\n", item.(map[string]interface{})["status"])
-	// }
-
-	// // Comparing the objects and storing data into new map
-	// CopiedMap:= make(map[string]interface{})
-
-	// fmt.Println(" ")
-	// for key := range mapping{
-	// 	k := 0
-	// 	for key_2 := range bonus_message{
-	// 		if (key == key_2){
-	// 			CopiedMap[key] = bonus_message[key_2]
-	// 			k++
-	// 			fmt.Printf("%v : %v\n", key, CopiedMap[key])
-	// 		}
-	// 	}
-	// 	if (k!=0){
-	// 		continue
-	// 	}
-	// 	for key_2 := range message{
-	// 		if (key == key_2){
-	// 			CopiedMap[key] = message[key_2]
-	// 			k++
-	// 			fmt.Printf("%v : %v\n", key, CopiedMap[key])
-	// 		}
-	// 	}
-	// }
-
-	// println("          ")
-	// println(2222222222222)
-
-	// for _,item := range push_message {
-	// 	for key_4 := range item.(map[string]interface{}){
-	// 		for key := range mapping{
-	// 			if (key == "push_messages[]."+key_4){
-	// 				CopiedMap[key] = item.(map[string]interface{})[key_4]
-	// 				fmt.Printf("%v : %v\n", key, CopiedMap[key])
-	// 			}
-	// 		}
-
-	// 	}
-
-	// }
 
 }
